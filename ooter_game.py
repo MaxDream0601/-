@@ -1,6 +1,21 @@
 #Создай собственный Шутер!
 from pygame import *
 from random import randint
+import os
+import sys
+
+
+
+def resource_path(relative_path):
+    try:
+        # PyInstaller создает временную папку _MEIPASS при сборке в один файл
+        base_path = sys._MEIPASS
+    except Exception:
+        # Обычный запуск скрипта
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 run = True
 time1 = 0
 #mixer.init_()
@@ -60,10 +75,10 @@ class Bullet(GameSprite):
         if self.rect.y < 0:
             self.kill()
 
-Mad = GameSprite('galaxy.jpg', 0, 0, 0, 700, 500)
-PlayerI = Player('rocket.png', 320, 400, 7, 60, 100)
+Mad = GameSprite(resource_path('assets/galaxy.jpg'), 0, 0, 0, 700, 500)
+PlayerI = Player(resource_path('assets/rocket.png',) 320, 400, 7, 60, 100)
 for i in range(5):
-    Monster = Emely('asteroid.png', randint(20, 680), 0, randint(1, 2), 50, 50)
+    Monster = Emely(resource_path('assets/asteroid.png'), randint(20, 680), 0, randint(1, 2), 50, 50)
     monsters.add(Monster)
 
 while run:
