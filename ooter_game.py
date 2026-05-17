@@ -76,7 +76,7 @@ class Bullet(GameSprite):
             self.kill()
 
 Mad = GameSprite(resource_path('assets/galaxy.jpg'), 0, 0, 0, 700, 500)
-PlayerI = Player(resource_path('assets/rocket.png',) 320, 400, 7, 60, 100)
+PlayerI = Player(resource_path('assets/rocket.png'), 320, 400, 7, 60, 100)
 for i in range(5):
     Monster = Emely(resource_path('assets/asteroid.png'), randint(20, 680), 0, randint(1, 2), 50, 50)
     monsters.add(Monster)
