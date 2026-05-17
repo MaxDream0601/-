@@ -54,7 +54,7 @@ class Player(GameSprite):
             self.rect.y += self.speed
     def fire(self):
         # 1. Create bullet
-        gun = Bullet('bullet.png', self.rect.centerx, self.rect.top, 10, 5, 10)
+        gun = Bullet('assets/bullet.png', self.rect.centerx, self.rect.top, 10, 5, 10)
         # 2. Add bullet to group
         Bullets.add(gun)
 
