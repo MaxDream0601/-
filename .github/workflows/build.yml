@@ -26,7 +26,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller --onefile --noconsole --add-data "assets;assets" game.py
+          pyinstaller --onefile --noconsole --add-data "assets;assets" ooter_game.py
 
       - name: Get current date
         id: date
@@ -38,6 +38,6 @@ jobs:
           tag: build-${{ github.run_number }}
           name: Build version ${{ github.run_number }}
           body: "Автоматическая сборка игры после коммита."
-          artifacts: "dist/game.exe"
+          artifacts: "dist/ooter_game.py.exe"
           token: ${{ secrets.GITHUB_TOKEN }}
           allowUpdates: true
